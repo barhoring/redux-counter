@@ -46,12 +46,20 @@ const mapStateToProps = (state) => {
   return state;
 };
 
+// A better alternative below
+/*
 const mapDispatchToProps = (dispatch) => {
   return {
     increment: () => dispatch(incrementValue()),
     decrement: () => dispatch(decrementValue()),
     reset: () => dispatch(resetValue()),
   };
+}; */
+
+const mapDispatchToProps = {
+  increment: incrementValue,
+  decrement: decrementValue,
+  reset: resetValue,
 };
 
 const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(Counter);
